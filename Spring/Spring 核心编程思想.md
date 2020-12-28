@@ -3,7 +3,7 @@
 
 2. Spring Framework 有哪些核心模块
 
-    - spring-core: Spring 基础 API 模块，如资源查找，范型处理
+    - spring-core: Spring 基础 API 模块，如资源查找，泛型处理
     - spring-beans: Spring Bean 相关，如依赖查找，依赖注入
     - spring-aop: Spring AOP 处理，如动态代理，AOP 字节码提升
     - spring-context: 事件驱动、注解驱动，模块驱动等
