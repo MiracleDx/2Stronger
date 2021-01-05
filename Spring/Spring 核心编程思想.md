@@ -102,3 +102,45 @@
      -   根据 Java 注解查找
          -   单个 Bean 对象
          -   集合 Bean 对象
+     
+13.  Spring Ioc 依赖注入
+     -   根据 Bean 名称注入
+     -   根据 Bean 类型注入
+         -   单个 Bean 对象
+         -   集合 Bean 对象
+     -   注入容器内建 Bean 对象
+     -   注入非容器内建 Bean 对象
+     -   注入类型
+         -   实时注入
+         -   延迟注入
+     
+14.  Spring 容器依赖的三个来源
+
+     -   自定义 Bean，可以通过 getBean 方法获取
+     -   容器内建依赖的 Bean，如课程中的 useRepository 中的 BeanFactory，无法通过 getBean 方法获取，是通过 AutowireCapableFactory中的 resolveDependency 方法注册
+         -   依赖，被组合的对象
+     -   容器内建 Bean，如 Envrionment、BeanDefinitions 和 Singleton Objects 可以通过 getBean 获取
+         -   内建（Built-in），是由 Spring IoC 容器内部生成的 Bean 或组件
+     
+15.  Spring IoC 配置元信息
+
+     -   Bean 定义配置
+         -   基于 XML 文件
+         -   基于 Properties 文件
+         -   基于 Java 注解
+         -   基于 Java API
+         -   基于 Groovy
+     -   IoC 容器配置
+         -   基于 XML 文件
+         -   基于 Java 注解
+         -   基于 Java API
+     -   外部化属性配置
+         -   基于 Java 注解
+
+16.  BeanFactory 和 ApplicationContext 有什么区别
+
+     -   ApplicationContext 是 BeanFactory的子接口
+     -   BeanFactory 是一个底层的 IoC 容器，提供了 IoC 容器的基本实现。而 ApplicationContext 是 BeanFactory 的超集，提供了丰富的企业级特性
+     -   ApplicationContext 委托 DefaultListableBeanFacory 实现 Bean 的依赖查找和依赖注入
+
+17.  AbstractApplicationContext#prepareBeanFactory 中指明 beanFactory.registerResolvableDependency(BeanFactory.class, beanFactory)，说明当 byType 是 BeanFactory.class的时候，获取到的是 ApplicationContext 中的 DefaultListableBeanFactory 对象
