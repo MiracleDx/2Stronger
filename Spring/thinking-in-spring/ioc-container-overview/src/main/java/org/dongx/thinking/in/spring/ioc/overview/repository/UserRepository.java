@@ -1,6 +1,8 @@
-package org.dongx.thinking.in.spring.ioc.overview.repostiroy;
+package org.dongx.thinking.in.spring.ioc.overview.repository;
 
 import org.dongx.thinking.in.spring.ioc.overview.domain.User;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.ObjectFactory;
 
 import java.util.Collection;
 
@@ -12,7 +14,11 @@ import java.util.Collection;
  */
 public class UserRepository {
 	
-	private Collection<User> users;
+	private Collection<User> users; // 自定义 Bean
+	
+	private BeanFactory beanFactory; // 内建非 Bean 对象（依赖）
+	
+	private ObjectFactory<User> objectFactory;
 
 	public Collection<User> getUsers() {
 		return users;
@@ -20,5 +26,21 @@ public class UserRepository {
 
 	public void setUsers(Collection<User> users) {
 		this.users = users;
+	}
+
+	public BeanFactory getBeanFactory() {
+		return beanFactory;
+	}
+
+	public void setBeanFactory(BeanFactory beanFactory) {
+		this.beanFactory = beanFactory;
+	}
+
+	public ObjectFactory<User> getObjectFactory() {
+		return objectFactory;
+	}
+
+	public void setObjectFactory(ObjectFactory<User> objectFactory) {
+		this.objectFactory = objectFactory;
 	}
 }
