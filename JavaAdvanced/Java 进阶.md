@@ -4,7 +4,7 @@
 
 **Java bytecode** 由单字节（byte）的指令组成，理论上最多支持 256 个操作吗，实际上 Java 只使用了 200 左右的操作码，一些操作码保留给调试操作
 
-根据指令性质，分为4个大类
+根据指令性质，分为 4 个大类
 
 1.  栈操作指令，包括与局部变量交互的指令
 2.  程序流程控制指令
@@ -68,6 +68,14 @@ JVM 是一台基于栈的计算机器
 栈帧由操作数栈、局部变量数组以及一个 Class 引用组成
 
 Class 引用指向当前方法在运行时常量池中对应的 Class
+
+# 方法调用的指令
+
+-   invokestatic，用于调用某个类的静态方法，是方法滴哦啊用指令中最快的一个
+-   invokespecial，用于调用构造函数，也可以用于调用同一个类中的 private 方法 以及可见的超类方法
+-   invokevirtual，如果是具体类型的目标对象，invokevirtual 用于调用公共，受保护和package级的私有方法
+-   invokeinterface，当通过接口引用调用方法时，将会编译为 invokeinterface 指令
+-   invokeddynamic，JDK7 新增指令，是实现“动态类型语言”（Dynamically Typed Language）支持而进行的升级改造，同时也是 JDK8 支持 lambda 表达式的实现基础
 
 
 
