@@ -144,3 +144,13 @@
      -   ApplicationContext 委托 DefaultListableBeanFacory 实现 Bean 的依赖查找和依赖注入
 
 17.  AbstractApplicationContext#prepareBeanFactory 中指明 beanFactory.registerResolvableDependency(BeanFactory.class, beanFactory)，说明当 byType 是 BeanFactory.class的时候，获取到的是 ApplicationContext 中的 DefaultListableBeanFactory 对象
+
+18.  Spring 应用下文（ApplicationContext）除了 IoC 容器角色，还提供：
+
+     -   面向切面（AOP）
+     -   配置元信息（Configuration Metadata）
+     -   资源管理（Resources）
+     -   事件（Events）
+     -   国际化（i18n）
+     -   注解（Annotations）
+     -   Environment 抽象（Environment Abstraction）
